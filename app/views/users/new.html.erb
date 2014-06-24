@@ -1,0 +1,23 @@
+<h1>Sign up</h1>
+
+<%=form_for  @user do |f|%>
+<div class="field">
+	<%=f.label "email"%><br/>
+	<%=f.text_field :email %>
+</div>
+<div class="field">
+	<%=f.label "Password"%><br/>
+	<%=f.password_field :password %>
+</div>
+<div id="class">
+	<label>Password Confirmation</label><br/>
+	<%=password_field_tag%>
+	</div>
+<div id="action">
+	<%=f.submit value="SignUp"%><br/>
+	Already Account<%=link_to "signin" , users_login_path%>
+</div>
+<%end%>
+<script type="text/javascript">
+  $('#new_user').validate({});
+</script>
