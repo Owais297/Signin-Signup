@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   #get 'users/create'
   resources 'users'
+  post 'users/athentication'
+  get 'users/login'
   post 'users/login'
   
 

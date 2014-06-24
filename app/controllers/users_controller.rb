@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	before_action :set_user, only:[:edit]
+	before_action :athentication, only:[:show]
   def new
   	@user=User.new
   end
@@ -18,7 +18,14 @@ class UsersController < ApplicationController
   	end
   end
   def login
-  	@user=User.all
+  	@user=User.find_by_id(params[:id])
+    if @user
+    if @user.password==params[:password]
+      flash[:notice]="User athenticated"
+    else
+      flash[:notice]="User is not athenticated"
+    end
+  end
   end
   def show
   end
@@ -28,12 +35,10 @@ end
 def set_user
 	@user=User.find(params[:id])
 end
-def password_match
-  if(parms[:password]==parms[:password_conformation])
-    return true
-  else
-    return false
+def failed
   end
+def athentication
+   @user=User.find_by_email(params[:email])
   end
 
 end
