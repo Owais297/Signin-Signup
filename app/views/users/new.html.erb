@@ -3,16 +3,16 @@
 <%=form_for  @user do |f|%>
 <div class="field">
 	<%=f.label "email"%><br/>
-	<%=f.text_field :email %>
+	<%=f.text_field :email,:required=>true,email:true %>
 </div>
 <div class="field">
 	<%=f.label "Password"%><br/>
-	<%=f.password_field :password %>
+	<%=f.password_field :password,:required=>true %>
 </div>
 <div id="class">
 	<label>Password Confirmation</label><br/>
-	<%=password_field_tag%>
-	</div>
+	<%=password_field_tag 'confirm_password', nil, equalTo: "#user_password"%></br>
+</div>
 <div id="action">
 	<%=f.submit value="SignUp"%><br/>
 	Already Account<%=link_to "signin" , users_login_path%>
@@ -20,4 +20,5 @@
 <%end%>
 <script type="text/javascript">
   $('#new_user').validate({});
+
 </script>

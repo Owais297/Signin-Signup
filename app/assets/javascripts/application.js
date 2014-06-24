@@ -16,14 +16,5 @@
 //= require_tree .
 //= require jquerylibrary
 //= require jquery.validate
+ 
 
-$(document).ready(function () {
-$("#new_user").validate({
-debug: true,
-rules: {
-"user[email]": { email: true},
-"user[password]": { minlength: 6},
-"password": { equalTo: "user_password"}
-}
-});
-});

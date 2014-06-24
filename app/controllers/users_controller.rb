@@ -28,5 +28,12 @@ end
 def set_user
 	@user=User.find(params[:id])
 end
+def password_match
+  if(parms[:password]==parms[:password_conformation])
+    return true
+  else
+    return false
+  end
+  end
 
 end
