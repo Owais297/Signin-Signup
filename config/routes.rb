@@ -2,10 +2,14 @@ Rails.application.routes.draw do
   #get 'users/new'
 
   #get 'users/create'
-  resources 'users'
+  #post 'users/athentication'
+  get 'users/sucessful'
   post 'users/athentication'
+  get 'users/failed'
   get 'users/login'
-  post 'users/login'
+  resources 'users'
+  
+  
   
 
 
